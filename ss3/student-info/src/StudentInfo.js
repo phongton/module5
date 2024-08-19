@@ -26,7 +26,6 @@ export class StudentInfo  extends Component{
                     </tr>
                     </thead>
                     <tbody>
-                    {/* Bước 5: Sử dụng map để hiển thị dữ liệu */}
                     {this.state.students.map(student => (
                         <tr key={student.id}>
                             <td>{student.id}</td>
