@@ -63,7 +63,7 @@ function Medical() {
                     <div className="mb-3">
                         <label className='form-label'>Số hộ chiếu:</label>
                         <Field className='form-control' name="id"/>
-                        <ErrorMessage className='text-danger' name="id" component="p"></ErrorMessage>
+                            <ErrorMessage className='text-danger' name="id" component="p"></ErrorMessage>
                     </div>
                     <div className="mb-3">
                         <label className='form-label'>Năm sinh:</label>
