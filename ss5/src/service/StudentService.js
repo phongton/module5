@@ -1,10 +1,19 @@
 import axios from "axios";
 const URL_STUDENTS = "http://localhost:8080/students";
-export const getAllStudents = async (name) => {
+export const getAllStudents = async (name,startDate,endDate) => {
     try{
-        let response = await axios.get(URL_STUDENTS+"?name_like="+name);
-
-        return response.data;
+        // let response = await axios.get(URL_STUDENTS+"?name_like="+name+"&date_gte="+startDate+"&date_lte="+endDate);
+        // // let response = await axios.get(URL_STUDENTS+"?name_like="+name+"&date_gte="+startDate+"&date_lte="+endDate);
+        // console.log(response.data)
+        // return response.data;
+        let response;
+        if(startDate&&endDate){
+            response = await axios.get(URL_STUDENTS+"?name_like="+name+"&date_gte="+startDate+"&date_lte="+endDate)
+            return response.data
+        }else {
+            response = await axios.get(URL_STUDENTS+"?name_like="+name)
+            return response.data
+        }
     }catch (e){
         return []
     }
@@ -33,5 +42,13 @@ export const findStudent = async (id) => {
 
     }catch (e){
         return []
+    }
+}
+export const updateStudent = async (data) => {
+    try{
+        await axios.put(URL_STUDENTS+`/${data.id}`,data);
+        return true
+    }catch(e){
+        return false
     }
 }

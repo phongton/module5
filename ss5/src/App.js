@@ -15,8 +15,8 @@ function App() {
         <>
             <BrowserRouter>
                 <div className="navbar navbar-expand-lg navbar-light bg-light">
-                    <NavLink className="navbar-brand" to="/student">Danh sách</NavLink>
-                    <NavLink className="navbar-brand" to="/create">Thêm mới</NavLink>
+                    <NavLink className="navbar-brand" to="/student"><span className="material-symbols-outlined">home</span></NavLink>
+                    <NavLink className="navbar-brand custom-button" to="/create">Create Student</NavLink>
                 </div>
                 <Routes>
                     <Route path="/create" element={<StudentCreate/>} />
